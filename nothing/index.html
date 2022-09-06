@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="cotainer">
+        <form action="#">
+
+            <h1>Suppier Section</h1>
+            <input type="text" placeholder="Enter Company Name" id="old__cname"><br>
+            <input type="number" id="old__sno" placeholder="Supplier Mobile No"><br>
+            <textarea id="old__sadd" cols="30" rows="10" placeholder="Enter Shop Add"></textarea>
+
+            <h1>Customer Section</h1>
+            <input type="text" id="customer" placeholder="Customer Name"><br>
+            <input type="number" id="cno" placeholder="Mobile No"><br>
+            <textarea placeholder="Enter Customer Add" name="" id="cadd" cols="30" rows="10"></textarea>
+
+
+            <h1>General Section</h1>
+            <input type="number" id="amount" placeholder="Amount Of Bill" maxlength="12"><br>
+            <input type="text" placeholder="Enter Discount Per" id="laga">
+
+
+
+            <select name="gst per" id="per">
+                <optgroup label="Non-Gst">
+                    <option>0</option>
+                </optgroup>
+                <optgroup label="Gst-per">
+                    <option>3</option>
+                    <option>5</option>
+                    <option>12</option>
+                    <option>18</option>
+                    <option>28</option>
+                </optgroup>
+            </select><br>
+            <input type="file" id="filetag">
+            <br>
+            <button type="reset">Reset</button>
+            <button type="button" onclick="fenil()">Submit</button>
+        </form>
+    </div>
+    <div class="templete">
+        <div class="header">
+            <img class="logo" src="src/img/upload.png" id="preview">
+            <h1 style="margin-top: 17px;" id="new__cname">Company</h1>
+            <p class="sadd">x-2002,any swociety,any road,any lolcality,city-pincode</p>
+        </div>
+        <div class="item">
+            <table>
+                <tr>
+                    <th>No.</th>
+                    <th style="width: 70%;">Name</th>
+                    <th>Amount</th>
+                    <th>Gst</th>
+                    <th>Total</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>product1</td>
+                    <td>95</td>
+                    <td>5</td>
+                    <td>100</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>

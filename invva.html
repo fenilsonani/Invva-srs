@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invva</title>
+    <script src="https://kit.fontawesome.com/0aa05e1cf3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="maininvva.png">
+    <!-- link of the downloading invoince -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+    <!-- html2canvas cdn link -->
+    <script src="  https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.0/html2canvas.min.js"></script>
+</head>
+
+<body>
+
+    <div class="cotainer no-print">
+        <form action="#">
+            <div class="supplier_section">
+                <h1>Suppier Section</h1>
+                <label for="">Enter Company Name</label><br>
+                <input type="text" placeholder="Company Name" id="old_sname" maxlength="15"><br>
+                <label for="">Enter Mobile No</label>
+                <input type="number" id="old_sno" placeholder="Supplier Mobile No"><br>
+                <label for="">Enter Address</label>
+                <textarea id="old_sadd" cols="30" rows="10" placeholder="Enter Shop Add" maxlength="76"></textarea>
+            </div>
+            <div class="cutomer_section">
+                <h1>Customer Section</h1>
+                <label for="">Enter Company Name</label><br>
+                <input type="text" id="old_cname" placeholder="Customer Name"><br> <label for="">Enter Mobile
+                    No</label>
+
+                <input type="number" id="cno" placeholder="Mobile No"><br> <label for="">Enter Address</label>
+
+                <textarea placeholder="Enter Customer Add" name="" id="old_cadd" cols="30" rows="10"
+                    maxlength="76"></textarea>
+            </div>
+
+
+            <div class="product_section">
+                <h1>Product Section</h1>
+
+                <!-- product 1 -->
+                <div class="p1">
+                    <h2>Product 1</h2>
+                    <label for="">Enter The Name</label>
+                    <input type="text" id="old_p1" placeholder="Product Name"><br>
+                    <label for="gst_per" style=""> Select Gst per for Product</label>
+                    <select name="gst_per" id="per_1">
+                        <optgroup label="Non-Gst">
+                            <option>0</option>
+                        </optgroup>
+                        <optgroup label="Gst-per">
+                            <option>3</option>
+                            <option>5</option>
+                            <option>12</option>
+                            <option>18</option>
+                            <option>28</option>
+                        </optgroup>
+                    </select><br><label for="">Enter The Amount</label>
+                    <input type="number" id="amt_p1" placeholder="Product Amount">
+                </div>
+
+                <!-- product 2 -->
+                <div class="p2">
+                    <h2>Product 2</h2>
+                    <label for="">Enter The Name</label>
+                    <br>
+                    <input type="text" id="old_p2" placeholder="Product Name"><br>
+                    <label for="gst_per"> Select Gst per for Product</label>
+                    <select name="gst per" id="per_2">
+                        <optgroup label="Non-Gst">
+                            <option>0</option>
+                        </optgroup>
+                        <optgroup label="Gst-per">
+                            <option>3</option>
+                            <option>5</option>
+                            <option>12</option>
+                            <option>18</option>
+                            <option>28</option>
+                        </optgroup>
+                    </select><br>
+                    <label for="">Enter The Amount</label>
+                    <input type="number" id="amt_p2" placeholder="Product Amount">
+                </div>
+            </div>
+            <input type="number" id="dis" placeholder="Enter Discount Percentage">
+            <!-- others -->
+            <div class="select-file" style="">
+                <label for="inputTag">
+                    Select Logo <br />
+                    <i class="fa fa-2x fa-camera"></i>
+                    <input id="inputTag" type="file" />
+                    <br />
+                    <span id="imageName"></span>
+                </label>
+            </div>
+
+            <button type="reset">Reset</button>
+            <button type="button" onclick="cal()">Submit</button>
+        </form>
+    </div>
+
+
+    <!-- strating of invoince part -->
+    <div class="main-contant">
+        <div class="main_par" id="htmlContent">
+            <div class="header" style="padding-top: 20px;">
+                <div class="img"><img src="img/upload.png" alt="uploaded_image" id="preview"></div>
+                <div class="all_name">
+                    <h2 id="new_cname">Customer</h2>
+                    <p id="new_cadd">Customer sample address </p>
+                    <p id="new_cno" style="font-weight: bold;">Mobile No</p>
+                </div>
+            </div>
+            <div class="body">
+                <table>
+                    <tr>
+                        <th>No.</th>
+                        <th>P Name</th>
+                        <th>Gst Per</th>
+                        <th>Gst Amt</th>
+                        <th>Total Amt</th>
+                    </tr>
+                    <tr>
+                        <td>1.</td>
+                        <td id="new_p1">Product 1</td>
+                        <td id="nh1"></td>
+                        <td id="qwer1"></td>
+                        <td id="qwert1"></td>
+                    </tr>
+                    <tr>
+                        <td>2.</td>
+                        <td id="new_p2">Product 2</td>
+                        <td id="nh2"></td>
+                        <td id="qwer2"></td>
+                        <td id="qwert2"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td style="font-weight: bolder;">Total</td>
+                        <td id="new_gst_total"></td>
+                        <td id="new_amt_total"></td>
+                    </tr>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td style="font-weight: bolder;">Discount</td>
+                        <td></td>
+                        <td id="new_dis_amt"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td style="font-weight: bolder;">Net Amt</td>
+                        <td></td>
+                        <td id="new_fenil_total"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="shop">
+                <table>
+                    <tr>
+                        <td class="nothing1">
+                            <h2 id="new_sname">Company Name</h2>
+                            <p id="new_sadd">Shop Sample Address</p>
+                            <p id=s_mobile_no>Mobile no</p>
+                        </td>
+                        <td class="nothing2" style="text-align: center">
+                            <h2></h2>
+                            <div
+                                style="background-color: transparent; min-height: 100px; border-bottom: 1px solid black; ;">
+                            </div>
+                            <p>signature</p>
+                        </td>
+                    </tr>
+                </table>
+                <div id="fenilsonani" style="padding-left: 35px; padding-top:30px ; font-size: 13px;">
+                    @all right reserved at a ______ company.
+                </div>
+                <div id="creation_date" style="padding-left: 35px; padding-top:10px ; font-size: 12px;"></div>
+            </div>
+        </div>
+    </div>
+    <!-- end of invoince part -->
+
+    <div style="margin-bottom: 30px;" class="cotainer no-print">
+        <button onclick="window.print()">Print</button>
+        <button style="margin-left: 60px;" onclick="visible()">Instruction For The Printing Invoince</button>
+    </div>
+
+    <div class=" cotainer instruction zoom-img" id="visivlity_of_instruction">
+        <h2>Instruction For The Printing Page</h2>
+        <ul style="font-weight: 700;">
+            <li>Press Ctrl+P or Click on Print Button <br><br>
+            <img src="img/instruction/i1.png" alt="" style="width:90% ;height: 70%; border-radius:10px ;"></li>
+            <li>Select Custome In Page<br><br>
+            <img src="img/instruction/i2.png" alt="" style="width:90% ;height: 70%; border-radius:10px ;"></li>
+            <li>Select Print For Better User Experience<br><br>
+            <img src="img/instruction/i3.png" alt="" style="width:90% ;height: 70%; border-radius:10px ;"></li>
+        </ul>
+        <button onclick="hideitem()" style="width: 100%;">Hide Instructrion</button>
+    </div>
+
+    <div class="cotainer" class="invvan no-print" style="margin-top: 50px;">
+        <ul>
+            <li>For The Better Experience Use Desktop Mode In The Mobile</li>
+            <li>This Site is created By Fenil Sonani</li>
+            <li>© All Rights Owened By The Fenil Sonani</li>
+        </ul>
+    </div>
+    <div class="cotainer no-print" style="margin-top: 50px; margin-bottom: 50px;">
+        <div class="zoom-img">
+            <img id="fenil_g" src="invva.png" alt="Logo" style="width: 90%; height: 90%; ">
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+        function autoClick() {
+            $("#download").click();
+        }
+
+        $(document).ready(function () {
+            var element = $("#htmlContent");
+
+            $("#download").on('click', function () {
+
+                html2canvas(element, {
+                    onrendered: function (canvas) {
+                        var imageData = canvas.toDataURL("image/jpg");
+                        var newData = imageData.replace(/^data:image\/jpg/, "data:application/octet-stream");
+                        $("#download").attr("download", "image.jpg").attr("href", newData);
+                    }
+                });
+
+            });
+        });
+    </script>
+    <script src="index.js"></script>    
+
+</body>
+
+</html>
