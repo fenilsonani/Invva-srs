@@ -84,24 +84,23 @@ function cal() {
 }
 
 const monthNames = ["January", "February", "March", "April", "May", "June",
-  "July", "August", "September", "October", "November", "December"
+    "July", "August", "September", "October", "November", "December"
 ];
 
 
 function visible() {
     // alert("this is a working");
-    document.getElementById("visivlity_of_instruction").style.display="inherit";
-    document.getElementById("visivlity_of_instruction").style.transition="all 2s";
+    document.getElementById("visivlity_of_instruction").style.display = "inherit";
+    document.getElementById("visivlity_of_instruction").style.transition = "all 2s";
 }
 
 function hideitem() {
-    document.getElementById("visivlity_of_instruction").style.display="none";
-    
+    document.getElementById("visivlity_of_instruction").style.display = "none";
+
 }
 
 var dateObj = new Date();
 var month = dateObj.getUTCMonth(); //months from 1-12
 var day = dateObj.getUTCDate();
 var year = dateObj.getUTCFullYear();
-document.getElementById("creation_date").innerHTML=day+" "+monthNames[ month]+","+year;
-
+document.getElementById("creation_date").innerHTML = day + " " + monthNames[month] + "," + year;
