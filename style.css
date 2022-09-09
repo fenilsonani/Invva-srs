@@ -85,6 +85,22 @@ body {
     margin: auto;
 }
 
+
+@media screen and (max-width: 600px){
+    ..cotainer {
+        margin-top: 100px;
+        /* display: flex; */
+        /* display: grid; */
+        border-radius: 10px;
+        padding: 30px;
+        /* width: 50%; */
+        width: 90vh;
+        background-color: lightblue;
+        /* text-align: center; */
+        margin: auto;
+    }
+}
+
 .cotainer option {
     padding-left: 10px;
 }
