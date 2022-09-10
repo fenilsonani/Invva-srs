@@ -106,13 +106,7 @@ body {
         /* text-align: center; */
         margin: auto;
     }
-    .main_par {
-        background-color: lightblue;
-        width: 400px;
-        margin: auto;
-        margin-top: 10px;
-        border-radius: 10px 10px
-    }
+    
 }
 
 .cotainer option {
