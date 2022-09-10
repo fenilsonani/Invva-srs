@@ -87,7 +87,7 @@ body {
 
 
 @media screen and (max-width: 600px){
-    ..cotainer {
+    .cotainer {
         margin-top: 100px;
         /* display: flex; */
         /* display: grid; */
