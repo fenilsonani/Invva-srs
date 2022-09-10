@@ -44,6 +44,13 @@
     display: none;
 }
 
+.main_par {
+    background-color: lightblue;
+    width: 500px;
+    margin: auto;
+    margin-top: 10px;
+    border-radius: 10px 10px
+}
 .zoom-img {
     /* padding: 0px; */
     overflow: hidden;
@@ -79,7 +86,7 @@ body {
     border-radius: 10px;
     padding: 30px;
     /* width: 50%; */
-    width: 500px;
+    width: 50%;
     background-color: lightblue;
     /* text-align: center; */
     margin: auto;
@@ -94,10 +101,17 @@ body {
         border-radius: 10px;
         padding: 30px;
         /* width: 50%; */
-        width: 400px;
+        width: 90%;
         background-color: lightblue;
         /* text-align: center; */
         margin: auto;
+    }
+    .main_par {
+        background-color: lightblue;
+        width: 400px;
+        margin: auto;
+        margin-top: 10px;
+        border-radius: 10px 10px
     }
 }
 
@@ -162,13 +176,7 @@ img {
     display: flex;
 }
 
-.main_par {
-    background-color: lightblue;
-    width: 500px;
-    margin: auto;
-    margin-top: 10px;
-    border-radius: 10px 10px
-}
+
 
 .header {
     margin-top: 20px;
