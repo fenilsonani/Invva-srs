@@ -86,7 +86,7 @@ body {
     border-radius: 10px;
     padding: 30px;
     /* width: 50%; */
-    width: 50%;
+    width: 500px;
     background-color: lightblue;
     /* text-align: center; */
     margin: auto;
@@ -101,7 +101,7 @@ body {
         border-radius: 10px;
         padding: 30px;
         /* width: 50%; */
-        width: 90%;
+        width: 500px;
         background-color: lightblue;
         /* text-align: center; */
         margin: auto;
